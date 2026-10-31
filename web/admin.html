@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data Room Administration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-page">
+<header id="topbar">
+  <div class="brand">
+    <strong id="project">Data room</strong>
+    <span class="muted">Administration</span>
+  </div>
+  <a href="./">Data room</a>
+  <label class="user-picker">Signed in as
+    <select id="user-select"></select>
+  </label>
+</header>
+<div class="admin" id="admin">
+  <div class="grid-2">
+    <section class="card">
+      <h2>Folder access per bidder</h2>
+      <table id="access"></table>
+      <p class="muted small">Closing a folder revokes the viewing tokens the bidder holds for its documents. Document Engine ends those viewer sessions at once.</p>
+    </section>
+    <section class="card">
+      <h2>Users and download rights</h2>
+      <table id="users"></table>
+      <p class="muted small">Downloads are built by Document Engine with the user's name, company, time and a reference burned into every page.</p>
+    </section>
+  </div>
+  <section class="card" style="margin-top:16px">
+    <h2>Engagement: time per page</h2>
+    <table id="engagement"></table>
+  </section>
+  <section class="card">
+    <div class="card-head">
+      <h2>Audit trail</h2>
+      <span id="chain"></span>
+      <select id="f-event" aria-label="Event"></select>
+      <select id="f-user" aria-label="User"></select>
+      <select id="f-document" aria-label="Document"></select>
+      <button type="button" id="csv-btn">Export CSV</button>
+    </div>
+    <div class="audit-wrap"><table id="audit" class="audit-table"></table></div>
+  </section>
+  <section class="card">
+    <h2>Add a document</h2>
+    <form id="upload" class="upload-row">
+      <select id="upload-folder" aria-label="Folder"></select>
+      <input type="text" id="upload-title" placeholder="Title (optional)" size="32">
+      <input type="file" id="upload-file" accept=".pdf,.docx,.xlsx,.pptx,.doc,.xls,.ppt" required>
+      <button type="submit" class="primary">Upload</button>
+      <span id="upload-status" class="muted small">PDF, Word, Excel or PowerPoint. Office files are converted to PDF by Document Engine.</span>
+    </form>
+  </section>
+</div>
+<script src="admin.js"></script>
+</body>
+</html>

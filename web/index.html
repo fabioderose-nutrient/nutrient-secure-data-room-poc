@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data Room</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.cloud.pspdfkit.com/pspdfkit-web@1.24.0/nutrient-viewer.js"></script>
+</head>
+<body>
+<header id="topbar">
+  <div class="brand">
+    <strong id="project">Data room</strong>
+    <span class="muted">Virtual data room</span>
+  </div>
+  <a id="admin-link" href="admin.html" hidden>Administration</a>
+  <label class="user-picker">Signed in as
+    <select id="user-select"></select>
+  </label>
+</header>
+<div id="layout">
+  <nav id="tree" aria-label="Folders"></nav>
+  <main id="main">
+    <div id="doc-bar" hidden>
+      <div class="doc-head">
+        <div id="doc-title"></div>
+        <div id="doc-meta" class="muted small"></div>
+      </div>
+      <span id="token-chip" class="chip" title="Lifetime of the viewing token issued for this document"></span>
+      <button type="button" id="download-btn" hidden>Download watermarked PDF</button>
+      <span id="view-only" class="chip" hidden>View only</span>
+      <button type="button" id="close-btn" class="secondary-small">Close</button>
+    </div>
+    <div id="viewer-wrap">
+      <div id="viewer"></div>
+      <div id="overlay" hidden></div>
+      <div id="empty" class="empty-state"></div>
+    </div>
+  </main>
+</div>
+<div id="toast" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

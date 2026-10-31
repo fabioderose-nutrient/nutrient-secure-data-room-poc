@@ -1,0 +1,17 @@
+{
+  "name": "secure-data-room-poc-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Virtual data room with Nutrient Document Engine: per-user read-only JWTs, watermarked downloads and an audit trail",
+  "scripts": {
+    "start": "node --env-file=../.env --env-file=../keys/app.env server.js"
+  },
+  "dependencies": {
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
